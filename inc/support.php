@@ -31,6 +31,7 @@ add_action('after_setup_theme', function () {
 
     // add custom image size
     add_image_size('card-thumb', 400, 280, true); // Hard crop mode
+    add_image_size('blog-thumb', 800, 320, true); // Hard crop mode
 });
 
 add_filter('upload_mimes', function ($mimes) {

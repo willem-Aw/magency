@@ -12,4 +12,13 @@ add_action('widgets_init', function() {
         'before_widget' => '<div class="lh__social-link-wrapper">',
         'after_widget' =>'</div>' 
     ]);
+
+    register_sidebar([
+        'id' => 'blog-sidebar',
+        'name' => __('Blog sidebar', 'magency'),
+        'before_title' => '<h2 class="lh__blog-sidebar-title">',
+        'after_title' => '</h2>',
+        'before_widget' => '<div class="lh__blog-sidebar">',
+        'after_widget' =>'</div>' 
+    ]);
 });

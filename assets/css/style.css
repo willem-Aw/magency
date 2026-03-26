@@ -66,6 +66,10 @@ button {
     transition: color var(--transition-speed) ease;
 }
 
+a:hover {
+    color: var(--light-primary-color);
+}
+
 h1,
 h2,
 h3,
@@ -383,6 +387,25 @@ input:focus-visible {
     }
 }
 
+.lh__blog-sidebar {
+    padding-block-end: 1rem;
+    ul {
+        list-style: initial;
+        padding-inline-start: 1rem;
+
+        li {
+            &>a {
+                font-size: calc(var(--regular-font-size) + .25rem);
+                line-height: var(--medium-line-height);
+            }
+
+            &:not(:last-child) {
+                padding-block-end: 1rem;
+            }
+        }
+    }
+}
+
 .header {
     background-color: var(--secondary-color);
 
@@ -690,6 +713,11 @@ input:focus-visible {
 
         &.lh__headline {
             --_room-card-width: max(calc((100% / 2) - 1rem), 400px);
+
+            .lh_blog-date {
+                margin-block: .5rem;
+                font-weight: var(--medium-font-weight);
+            }
         }
 
         .lh__room-type-card {
@@ -745,6 +773,24 @@ input:focus-visible {
                 font-size: var(--medium-font-size);
                 font-weight: var(--semibold-font-weight);
                 margin-block-end: 0.25rem;
+
+                &>a:hover {
+                    color: var(--light-primary-color);
+                }
+            }
+
+            .lh_excerpt {
+                line-height: var(--_paragraph-height);
+                height: calc(var(--_paragraph-height) * 4);
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin-block-end: 0.5rem;
+                font-size: var(--regular-font-size);
+
+                p {
+                    line-height: inherit;
+                    font-size: inherit;
+                }
             }
 
             &>p {
@@ -757,12 +803,6 @@ input:focus-visible {
                     overflow: hidden;
                     text-overflow: ellipsis;
                 } */
-                &.lh_excerpt {
-                    line-height: var(--_paragraph-height);
-                    height: calc(var(--_paragraph-height) * 4);
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
 
                 span {
                     font-size: var(--small-font-size);
@@ -779,7 +819,7 @@ input:focus-visible {
 
             a:hover {
                 background-color: transparent;
-                color: var(--primary-color);
+                color: var(--light-primary-color);
             }
         }
 

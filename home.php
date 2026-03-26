@@ -6,22 +6,31 @@
             <?php single_post_title() ?>
         </h1>
     </section>
-    <section class="container-full  has-padding">
-        <div class="lh__listing-product room-type">
-            <ul class="grid prd-listing lh__headline lh__room-type-cards grid">
+    <section class="container-full  has-padding room-type">
+        <div class="lh__listing-product lh__room-type grid">
+            <div>
+                <div>
+                    <?php if (is_active_sidebar('blog-sidebar')) : ?>
+                        <?php dynamic_sidebar('blog-sidebar'); ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="lh__room-type-cards">
+                <ul class="grid prd-listing lh__headline lh__room-type-cards grid">
 
-                <?php while (have_posts()): the_post() ?>
+                    <?php while (have_posts()): the_post() ?>
 
-                    <li class="item lh__room-type-card">
-                        <?php get_template_part('parts/blog-card'); ?>
-                    </li>
+                        <li class="item lh__room-type-card">
+                            <?php get_template_part('parts/blog-card'); ?>
+                        </li>
 
 
-                <?php endwhile; ?>
+                    <?php endwhile; ?>
 
-            </ul>
-            <div class="flex-center pagination-wrapper">
-                <?= paginate_links(); ?>
+                </ul>
+                <div class="flex-center pagination-wrapper">
+                    <?= paginate_links(); ?>
+                </div>
             </div>
         </div>
     </section>

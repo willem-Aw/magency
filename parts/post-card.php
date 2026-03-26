@@ -1,7 +1,11 @@
 <div class="lh__room-type-card">
     <figure>
         <a href="<?php the_permalink(); ?>">
-            <?php the_post_thumbnail('card-thumb', ['class' => 'img-cs-size', 'alt' => '']); ?>
+            <?php if (has_post_thumbnail()) : ?>
+                <?php the_post_thumbnail('card-thumb', ['class' => 'img-cs-size', 'alt' => '']); ?>
+            <?php else : ?>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8+x8AAp8BznoPXvoAAAAASUVORK5CYII=">
+            <?php endif ?>
         </a>
     </figure>
     <div class="lh__room-type-card-content flex-column-between">
@@ -12,7 +16,7 @@
             </ul>
         </div>
         <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-        <p class="lh_excerpt"><?php echo get_the_excerpt(); ?></p>
+        <div class="lh_excerpt"><?php echo get_the_excerpt(); ?></div>
         <p>
             <span>4 people</span>
             <span>4 m<sup>2</sup></span>
