@@ -7,7 +7,7 @@
     <?php wp_head() ?>
 </head>
 
-<body>
+<body <?php body_class() ?> >
     <header class="container-full header" style="background-color: <?= get_theme_mod('header_color'); ?>;">
         <div class="lh__navbar container flex-space-between">
             <!-- <div class="lh__logo">
