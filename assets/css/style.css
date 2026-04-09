@@ -421,7 +421,7 @@ input[type="submit"] {
 .lh__top-banner {
     .lh__page-title {
         text-align: center;
-        font-size: calc(var(--extra-large-font-size) + 1.25rem);
+        font-size: var(--extra-large-font-size);
     }
 }
 
