@@ -18,11 +18,19 @@
         <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
         <div class="lh_excerpt"><?php echo get_the_excerpt(); ?></div>
         <p>
-            <span>4 people</span>
-            <span>4 m<sup>2</sup></span>
+            <?php $room = get_field('room'); ?>
+            <?php $surface = get_field('surface'); ?>
+            <?php if ($surface && $room) : ?>
+                <span><?= $surface . ' m' ?><sup>2</sup></span>
+                <span><?= ($room > 1) ? $room . ' rooms' : $room . ' room' ?></span>
+            <?php endif; ?>
         </p>
         <p>
-            <strong>400$</strong>
+            <?php $price = get_field('price'); ?>
+            <?php if ($price) : ?>
+                <?php $formatted_number = number_format_i18n($price); ?>
+                <strong><?= $formatted_number . ' €'; ?></strong>
+            <?php endif; ?>
         </p>
         <a href="<?php the_permalink(); ?>" class="btn-sm btn btn-primary btn-border-primary text-center">See More</a>
     </div>

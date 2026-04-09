@@ -29,5 +29,13 @@ add_filter('nav_menu_css_class', function (array $classes, WP_Post $item): array
         }
     }
 
+    if (is_post_type_archive('property')) {
+        global $wp;
+
+        if (str_contains($item->url, $wp->request)) {
+            $classes[] =  'current_page_parent';
+        }
+    }
+
     return $classes;
 }, 10, 2);
